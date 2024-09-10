@@ -1,0 +1,13 @@
+.wordMeaningContainer {
+    font-family: serif;
+    margin-top: 12px;
+    .partOfSpeech {
+        font-weight: 900;
+        font-size: 20px;
+    }
+    .meaning {
+        font-size: 18px;
+        color: var(--text-80);
+        margin-top: 12px;
+    }
+}

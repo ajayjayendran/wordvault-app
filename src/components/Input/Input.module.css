@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+    .defaultInput {
+        width: 100%;
+        background-color: #F5F5F5;
+        color: var(--text-100);
+        border: none;
+        padding: 12px 10px;
+        font-family: serif;
+        font-weight: 900;
+        outline: none;
+        border-radius: 8px;
+        font-size: 18px;
+    }
+}

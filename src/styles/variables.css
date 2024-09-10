@@ -1,0 +1,11 @@
+:root {
+    --primary-text: #4a5ce5;
+    --secondary-text: #666666;
+    --disabled-text: #999999;
+    --text-80: #666666;
+    --input-background: #FFFFFF;
+    --input-border: #CCCCCC;
+    --input-border-focus: #007BFF;
+    --placeholder-text: #999999;
+    --error-color: #FF4C4C;
+  }
