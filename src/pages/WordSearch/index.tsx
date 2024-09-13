@@ -3,19 +3,31 @@ import { SearchInput } from "./components/SearchInput";
 import { WordMeaning } from "./components/WordMeaning";
 import { WordPhonetics } from "./components/WordPhonetics";
 import { fetchWordDefinition } from "../../api/Dictionary.service";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dictionary, meanings, phonetics } from "../../types/Dictionary.type";
 
 export const WordSearch = () => {
   const [searchWord, setSearchWord] = useState("");
 
-  const { isPending, error, data } = useQuery<Dictionary[]>({
-    queryKey: ["searchWord"],
+  const { data, refetch } = useQuery<Dictionary[]>({
+    queryKey: ["searchWord", searchWord],
     queryFn: () => fetchWordDefinition(searchWord),
     enabled: !!searchWord,
+    staleTime: 0,
+    retry: (_failureCount, error) => {
+      if ((error as any).status === 404) {
+        // Don't retry if it's a 404 error
+        console.log(error);
+      }
+      return false;
+    },
   });
 
-  console.log(data);
+  useEffect(() => {
+    if (searchWord) {
+      refetch();
+    }
+  }, [searchWord, refetch]);
 
   return (
     <div>
@@ -24,21 +36,25 @@ export const WordSearch = () => {
           setSearchWord(value);
         }}
       />
-      {data?.map((dictionary: Dictionary, index) => {
-        return (
-          <div key={index}>
-            {dictionary.phonetics.map((phonetics: phonetics) => {
-              return (
-                <WordPhonetics phonetics={phonetics} word={dictionary.word} />
-              );
-            })}
+      {data && data.length > 0 && (
+        <>
+          {data[0].phonetics.map((phonetics: phonetics) => {
+            return (
+              <>
+                {phonetics?.license?.name &&
+                  phonetics.text &&
+                  phonetics?.audio && (
+                    <WordPhonetics phonetics={phonetics} word={data[0].word} />
+                  )}
+              </>
+            );
+          })}
 
-            {dictionary.meanings.map((meanings: meanings) => {
-              return <WordMeaning meanings={meanings} />;
-            })}
-          </div>
-        );
-      })}
+          {data[0].meanings.map((meanings: meanings) => {
+            return <WordMeaning meanings={meanings} />;
+          })}
+        </>
+      )}
     </div>
   );
 };
