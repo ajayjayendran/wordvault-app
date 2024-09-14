@@ -1,13 +1,20 @@
 .wordMeaningContainer {
-    font-family: serif;
-    margin-top: 12px;
+    font-family: var(--primary-font);
+    margin-top: var(--spacing-sm);
     .partOfSpeech {
-        font-weight: 900;
-        font-size: 20px;
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-xlarge);
     }
     .meaning {
-        font-size: 18px;
-        color: var(--text-80);
-        margin-top: 12px;
+        font-size: var(--font-size-large);
+        font-weight: var(--font-weight-medium);
+        color: var(--text-secondary);
+        margin-top: var(--spacing-sm);
+    }
+    .definition {
+        font-size: var(--font-size-large);
+        font-weight: var(--font-weight-medium);
+        color: var(--text-primary);
+        margin-top: var(--spacing-sm);
     }
 }

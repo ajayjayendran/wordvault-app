@@ -1,12 +1,14 @@
 button {
     cursor: pointer;
     padding: 12px 32px;
-    background-color: var(--primary-text);
+    background-color: var(--primary-color);
     outline: none;
     border: none;
-    color: white;
+    color: var(--text-primary);
     font-weight: 900;
-    font-family: serif;
+    font-family: var(--primary-font);
     font-size: 18px;
     border-radius: 12px;
+    height: 100%;
+    width: 100%;
 }

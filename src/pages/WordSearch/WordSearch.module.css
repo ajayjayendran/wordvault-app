@@ -1,0 +1,7 @@
+.resultContainer {
+    background-color: white;
+    margin-top: var(--spacing-lg);
+    border: 1px solid var(--input-border);
+    border-radius: var(--size-xs);
+    padding: var(--spacing-md);
+}

@@ -5,6 +5,7 @@ import { WordPhonetics } from "./components/WordPhonetics";
 import { fetchWordDefinition } from "../../api/Dictionary.service";
 import { useEffect, useState } from "react";
 import { Dictionary, meanings, phonetics } from "../../types/Dictionary.type";
+import styles from "./WordSearch.module.css";
 
 export const WordSearch = () => {
   const [searchWord, setSearchWord] = useState("");
@@ -37,7 +38,7 @@ export const WordSearch = () => {
         }}
       />
       {data && data.length > 0 && (
-        <>
+        <div className={styles.resultContainer}>
           {data[0].phonetics.map((phonetics: phonetics) => {
             return (
               <>
@@ -53,7 +54,7 @@ export const WordSearch = () => {
           {data[0].meanings.map((meanings: meanings) => {
             return <WordMeaning meanings={meanings} />;
           })}
-        </>
+        </div>
       )}
     </div>
   );

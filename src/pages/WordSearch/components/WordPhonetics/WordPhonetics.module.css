@@ -1,12 +1,12 @@
 .phoneticsContainer {
-    border-bottom: 1px solid;
-    padding: 24px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: var(--spacing-md);
     .word {
-        font-family: serif;
-        font-size: 48px;
-        font-weight: 900;
+        font-family: var(--primary-font);
+        font-size: var(--font-size-xxxlarge);
+        font-weight: var(--font-weight-bold);
     }
     .pronunciation {
-        font-family: serif;
+        font-family: var(--primary-font);
     }
 }

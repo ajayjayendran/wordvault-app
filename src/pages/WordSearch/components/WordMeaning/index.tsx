@@ -15,7 +15,7 @@ export const WordMeaning = ({ meanings }: WordMeaningProps) => {
       {meanings.definitions.map((definitions) => {
         return (
           <ul>
-            <li>{definitions.definition}</li>
+            <li className={styles.definition}>{definitions.definition}</li>
           </ul>
         );
       })}

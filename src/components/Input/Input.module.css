@@ -1,15 +1,25 @@
 .container {
-    width: 100%;
+    
+    border-radius: var(--size-xs);
+    border: 1px solid var(--input-border);
+    padding: var(--spacing-sm) 10px;
+    background-color: var(--input-background);
+    display: flex;
+    align-items: center;
+    @media (min-width: 768px) {
+        width: 100%;    
+    }
+    .icon {
+        cursor: pointer;
+    }
     .defaultInput {
         width: 100%;
-        background-color: #F5F5F5;
         color: var(--text-100);
-        border: none;
-        padding: 12px 10px;
-        font-family: serif;
-        font-weight: 900;
+        font-family: var(--primary-font);
+        font-weight: var(--font-weight-medium);
         outline: none;
-        border-radius: 8px;
+        border: none;
         font-size: 18px;
     }
+
 }

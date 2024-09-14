@@ -1,12 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 :root {
-    --primary-text: #4a5ce5;
-    --secondary-text: #666666;
-    --disabled-text: #999999;
-    --input-background: #F5F5F5;
-    --input-border: #CCCCCC;
-    --input-border-focus: #007BFF;
-    --text-100: #050505;
-    --text-80: #666666;
-    --placeholder-text: #999999;
-    --error-color: #FF4C4C;
+  /* Colors for light mode */
+  --primary-color: #08ed97; /* Darker shade for primary text */
+  --secondary-color: #4a5ce5; /* Light blue for secondary text */
+  --disabled-text: #999999; /* Light gray for disabled text */
+  --input-background: #ffffff;
+  --input-border: #A5A7B1;
+  --input-border-focus: #007BFF;
+  --text-primary: #1c1e21; /* Primary text color */
+  --text-secondary: #666666; /* Muted text color */
+
+  --placeholder-text: #b0b0b0; /* Slightly muted gray */
+  --background-color: #fafafa; /* Light background */
+  --error-color: #FF4C4C; /* Error messages */
+  
+  /* Dark mode colors */
+  --dark-primary-color: #F5F5F5;
+  --dark-secondary-color: #AEB6FF; /* Lighter blue for dark mode */
+  --dark-disabled-text: #777777;
+  --dark-background: #f0f0f0;
+  --dark-input-background: #2A2A2A;
+  --dark-input-border: #444444;
+  --dark-input-border-focus: #6a82ff; /* Lighter blue border */
+  --dark-text-100: #e0e0e0;
+  --dark-text-80: #CCCCCC;
+  --dark-placeholder-text: #888888;
+  --dark-background-color: #1c1c1c;
+  --dark-error-color: #FF6A6A;
+
+  /* Font Settings */
+  /* 14px / 16 = 0.875rem, 1rem = 16px */
+  --primary-font:'Source Sans 3';
+  --font-size-small: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-large: 1.25rem; /* 20px */
+  --font-size-xlarge: 1.5rem; /* 24px */
+  --font-size-xxlarge: 2rem; /* 32px */
+  --font-size-xxxlarge: 3rem; /* 48px */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-small: 1.4;
+  --line-height-base: 1.6;
+  --line-height-large: 1.8;
+  --line-height-xlarge: 2.0;
+
+  /* Spacing */
+  --spacing-0: 0rem;
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem; /* 32px */
+
+  --size-xs: 0.5rem; /* 8px */
+  --size-sm: 1rem; /* 8px */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+    --disabled-text: var(--dark-disabled-text);
+    --input-background: var(--dark-input-background);
+    --input-border: var(--dark-input-border);
+    --input-border-focus: var(--dark-input-border-focus);
+    --text-100: var(--dark-text-100);
+    --text-80: var(--dark-text-80);
+    --placeholder-text: var(--dark-placeholder-text);
+    --background-color: var(--dark-background-color);
+    --error-color: var(--dark-error-color);
   }
+} 

@@ -9,15 +9,14 @@ interface SearchInputProps {
 
 export const SearchInput = ({ fetchResult }: SearchInputProps) => {
   const [word, setWord] = useState("");
-  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
-    setWord(event.target.value);
+  const onInputChange = (value: string) => {
+    setWord(value);
   };
   return (
     <div className={styles.searchInput}>
       <Input onChange={onInputChange} placeholder="Start typing..." />
       <div className={styles.buttonContainer}>
-        <Button onClick={() => fetchResult(word)}>Done !</Button>
+        <Button onClick={() => fetchResult(word)}>Search</Button>
       </div>
     </div>
   );
