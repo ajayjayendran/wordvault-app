@@ -1,11 +1,11 @@
 .container {
-    
     border-radius: var(--size-xs);
     border: 1px solid var(--input-border);
     padding: var(--spacing-sm) 10px;
     background-color: var(--input-background);
     display: flex;
     align-items: center;
+    gap: var(--spacing-xs);
     @media (min-width: 768px) {
         width: 100%;    
     }

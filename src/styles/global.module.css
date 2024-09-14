@@ -3,8 +3,6 @@
 :root {
   /* Colors for light mode */
   --primary-color: #08ed97; /* Darker shade for primary text */
-  --secondary-color: #4a5ce5; /* Light blue for secondary text */
-  --disabled-text: #999999; /* Light gray for disabled text */
   --input-background: #ffffff;
   --input-border: #A5A7B1;
   --input-border-focus: #007BFF;
@@ -17,14 +15,11 @@
   
   /* Dark mode colors */
   --dark-primary-color: #F5F5F5;
-  --dark-secondary-color: #AEB6FF; /* Lighter blue for dark mode */
-  --dark-disabled-text: #777777;
-  --dark-background: #f0f0f0;
   --dark-input-background: #2A2A2A;
   --dark-input-border: #444444;
   --dark-input-border-focus: #6a82ff; /* Lighter blue border */
-  --dark-text-100: #e0e0e0;
-  --dark-text-80: #CCCCCC;
+  --dark-text-primary: #e0e0e0;
+  --dark-text-secondary: #CCCCCC;
   --dark-placeholder-text: #888888;
   --dark-background-color: #1c1c1c;
   --dark-error-color: #FF6A6A;
@@ -61,13 +56,11 @@
 @media (prefers-color-scheme: light) {
   :root {
     --primary-color: var(--dark-primary-color);
-    --secondary-color: var(--dark-secondary-color);
-    --disabled-text: var(--dark-disabled-text);
     --input-background: var(--dark-input-background);
     --input-border: var(--dark-input-border);
     --input-border-focus: var(--dark-input-border-focus);
-    --text-100: var(--dark-text-100);
-    --text-80: var(--dark-text-80);
+    --text-primary: var(--dark-text-100);
+    --text-secondary: var(--dark-text-80);
     --placeholder-text: var(--dark-placeholder-text);
     --background-color: var(--dark-background-color);
     --error-color: var(--dark-error-color);
