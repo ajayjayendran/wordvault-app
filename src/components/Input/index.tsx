@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CloseIcon, SearchIcon } from "../../assets/icons";
 import styles from "./Input.module.css";
 
 interface InputProps {
   onChange: (value: string) => void;
   placeholder?: string;
+  defaultValue?: string;
 }
 
-export const Input = ({ onChange, placeholder = "" }: InputProps) => {
-  const [value, setValue] = useState("");
+export const Input = ({
+  onChange,
+  placeholder = "",
+  defaultValue,
+}: InputProps) => {
+  const [value, setValue] = useState(defaultValue);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -19,6 +24,10 @@ export const Input = ({ onChange, placeholder = "" }: InputProps) => {
     setValue("");
     onChange("");
   };
+
+  useEffect(() => {
+    setValue(defaultValue);
+  }, [defaultValue]);
 
   return (
     <div className={styles.container}>

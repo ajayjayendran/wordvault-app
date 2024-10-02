@@ -5,3 +5,28 @@
     border-radius: var(--size-xs);
     padding: var(--spacing-md);
 }
+
+.recentContainer {
+    margin-top: var(--spacing-md);
+    .title {
+        font-family: var(--primary-font);
+        color: var(--text-secondary);
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-base);
+    }
+    .recentList {
+        display: flex;
+        gap: var(--spacing-xs);
+        margin-top: var(--spacing-xs);
+        .recentWord {
+            background-color: var(--input-background);
+            border-radius: var(--size-xs);
+            border: 1px solid var(--input-border);
+            padding: 5px 10px;
+            border-radius: var(--spacing-sm);
+            font-weight: var(--font-weight-bold);
+            font-family: var(--primary-font);
+            cursor: pointer;
+        }
+    }
+}
